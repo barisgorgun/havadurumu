@@ -17,6 +17,8 @@
 		FA6A1EB4248BAB2900FA33BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6A1EB2248BAB2900FA33BD /* LaunchScreen.storyboard */; };
 		FA6E5CBF24C319DC0067C34D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E5CBE24C319DC0067C34D /* Request.swift */; };
 		FA6E5CC224C31A9C0067C34D /* HavadurumuResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E5CC124C31A9C0067C34D /* HavadurumuResponseModel.swift */; };
+		FA6E5CC824C461C80067C34D /* UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E5CC724C461C80067C34D /* UITextFieldDelegate.swift */; };
+		FA6E5CCA24C494F90067C34D /* CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E5CC924C494F90067C34D /* CLLocationManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		FA6A1EB5248BAB2900FA33BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA6E5CBE24C319DC0067C34D /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		FA6E5CC124C31A9C0067C34D /* HavadurumuResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HavadurumuResponseModel.swift; sourceTree = "<group>"; };
+		FA6E5CC724C461C80067C34D /* UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldDelegate.swift; sourceTree = "<group>"; };
+		FA6E5CC924C494F90067C34D /* CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerDelegate.swift; sourceTree = "<group>"; };
 		FD4DF402C67E385871E167C5 /* Pods-HavaDurumu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavaDurumu.release.xcconfig"; path = "Target Support Files/Pods-HavaDurumu/Pods-HavaDurumu.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +90,7 @@
 		FA6A1EA3248BAB2500FA33BD /* HavaDurumu */ = {
 			isa = PBXGroup;
 			children = (
+				FA6E5CC624C4617C0067C34D /* Extension */,
 				FA6E5CBD24C319C90067C34D /* Manager */,
 				FA6E5CC324C31B430067C34D /* Controller */,
 				FA6E5CC024C31A7A0067C34D /* Model */,
@@ -122,6 +127,15 @@
 				FA6A1EA8248BAB2500FA33BD /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA6E5CC624C4617C0067C34D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E5CC724C461C80067C34D /* UITextFieldDelegate.swift */,
+				FA6E5CC924C494F90067C34D /* CLLocationManagerDelegate.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,8 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6E5CCA24C494F90067C34D /* CLLocationManagerDelegate.swift in Sources */,
 				FA6A1EA9248BAB2500FA33BD /* ViewController.swift in Sources */,
 				FA6A1EAF248BAB2500FA33BD /* HavaDurumu.xcdatamodeld in Sources */,
+				FA6E5CC824C461C80067C34D /* UITextFieldDelegate.swift in Sources */,
 				FA6E5CC224C31A9C0067C34D /* HavadurumuResponseModel.swift in Sources */,
 				FA6E5CBF24C319DC0067C34D /* Request.swift in Sources */,
 				FA6A1EA5248BAB2500FA33BD /* AppDelegate.swift in Sources */,

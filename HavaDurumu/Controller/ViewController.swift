@@ -8,52 +8,46 @@
 
 import UIKit
 import Kingfisher
+import CoreLocation
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var lblTemperature: UILabel!
-    @IBOutlet weak var weatherIcon: UIImageView!
-    @IBOutlet weak var lblSummary: UILabel!
-    @IBOutlet weak var lblPrecipitation: UILabel!
-    @IBOutlet weak var lblHumidity: UILabel!
-    @IBOutlet weak var btnRefresh: UIButton!
- 
-    var response : HavadurumuResponseModel?
     
-    var lon : Double = -0.13
-    var lat : Double = 51.51
-   
+    @IBOutlet weak var sicakliklbl: UILabel!
+    @IBOutlet weak var havadurumuimg: UIImageView!
+    @IBOutlet weak var sehirlbl: UILabel!
+    @IBOutlet weak var aramaTextField: UITextField!
+    
+    var response : HavadurumuResponseModel?
+    let request = Request()
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-     
-         let request = Request()
-            
-        request.getLocation(lat: lat,lon: lon) { (responseModel, error) in
-            self.response = responseModel
-            self.lblTemperature.text = "\(self.response!.main.temp)°C"
-            self.lblHumidity.text = "%\(self.response!.main.humidity)"
-            self.lblSummary.text = self.response!.name
-            
-            
-        }
         
+        locationManager.delegate = self
+        aramaTextField.delegate = self
         
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
         
-        
-       
         
     }
     
-    /*public func fillData( filmImageUrlStr:String) {
-       
-        let url = URL(string: "https://image.tmdb.org/t/p/original" + filmImageUrlStr)
+    @IBAction func lokasyonPressed(_ sender: Any) {
+         locationManager.requestLocation()
+    }
+    
+    
+    public func fillData(name: String ,temp: Int, icon:String) {
+        
+        let url = URL(string: "http://openweathermap.org/img/wn/" + icon + "@2x.png")
+        self.sehirlbl.text = name
+        self.sicakliklbl.text = "\(temp)"
+        
         if let url = url {
-            weatherIcon.kf.indicatorType = .activity
-            weatherIcon.kf.setImage(with: url)
+            havadurumuimg.kf.indicatorType = .activity
+            havadurumuimg.kf.setImage(with: url)
         }
-    }*/
-
-
+    }
+    
 }
-
